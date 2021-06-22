@@ -1,11 +1,11 @@
-#include <iostream>              //подключение директивы препроцессора
+#include <iostream>              
 
-using namespace std;                  //подключение пространства имен
-unsigned int counter;                 //объявляем глобальную переменную подсчета элементов
+using namespace std;                  
+unsigned int counter;                 
 
-class SingleList                      //создаем класс лист
+class SingleList                      
 {
-public:                               //в паблик модификатор записываем все необходимые методы
+public:                               
 	SingleList();
 	SingleList(int value);
 	void PrintEven();
@@ -14,24 +14,24 @@ public:                               //в паблик модификатор записываем все необ
 	void dellList();
 	
 
-private:                               //класс будет хранить целочисленные данные и указатель на следующий элемент
+private:                               
 	int value;
 	SingleList* next;
 };
 
-SingleList::SingleList()              //инициализируем конструктор без параметров
+SingleList::SingleList()              
 {
 	this->value = 0;
 	this->next = nullptr;
 }
 
-SingleList::SingleList(int value)     //инициализируем конструктор с параметрами
+SingleList::SingleList(int value)     
 {
 	this->value = value;
 	this->next = nullptr;
 }
 
-void SingleList::PrintEven() {            //метод, который выводит все четные числа
+void SingleList::PrintEven() {            
 	if (this->value%2 == 0)
 	{
 		cout << value << " ";
@@ -42,7 +42,7 @@ void SingleList::PrintEven() {            //метод, который выводит все четные чи
 	}
 }
 
-SingleList* SingleList::createList(int value) {         //метод создающий новый экземпляр класса
+SingleList* SingleList::createList(int value) {         
 	SingleList* listPtr = new SingleList;
 	listPtr->next = this;
 	listPtr->value = value;
@@ -50,7 +50,7 @@ SingleList* SingleList::createList(int value) {         //метод создающий новый 
 	return listPtr;
 }
 
-void SingleList::PrintEvery() {            //метод вывода в консоль всего списка
+void SingleList::PrintEvery() {            
 	cout << value << " ";
 	if (this->next != nullptr)
 	{
@@ -58,7 +58,7 @@ void SingleList::PrintEvery() {            //метод вывода в консоль всего списка
 	}
 }
 
-void SingleList::dellList()                    //метод удаления последнего элемента списка
+void SingleList::dellList()                   
 {
 	if (counter == 0)
 	{
@@ -85,13 +85,13 @@ void SingleList::dellList()                    //метод удаления последнего элеме
 }
 
 int main() {
-	unsigned int quant = 0;     //переменная, куда мы задаем количество элементов
-	int choice = 0;             //переменная записи выбора пользователя
-	SingleList* list = nullptr;  //указатель на первый элемент списка
+	unsigned int quant = 0;     
+	int choice = 0;             
+	SingleList* list = nullptr;  
 
-	for (;;)                      //бесконечный цикл
+	for (;;)                      
 	{
-		cout << endl << endl;                    //меню выбора
+		cout << endl << endl;                    
 		cout << "What do you want?" << endl;
 		cout << "1 - Create new list." << endl;
 		cout << "2 - Add element." << endl;
@@ -102,9 +102,9 @@ int main() {
 		cout << "7 - Delete list." << endl;
 		cout << "8 - Exit." << endl;
 		cout << endl;
-		cin >> choice;                          //вводим переменную выбора
+		cin >> choice;                          
 
-		switch (choice)                          //условная конструкция выбора и вызова определенных методов
+		switch (choice)                          
 		{
 		case 1:
 			if (counter == 0)
